@@ -18,14 +18,16 @@ import com.omni.dew.basemodule.LoginResponse;
 import java.util.Arrays;
 
 public class FaceBookLogin implements BaseLogin {
-    private FaceBookLogin(){ }
+
     Activity activity;
     LoginResponse loginResponse;
     CallbackManager callbackManager;
     int code;
     private static final String EMAIL = "email";
     private static final String PROFILE = "public_profile";
-    public FaceBookLogin(Activity activity, LoginResponse loginResponse){
+
+    @Override
+    public void init(Activity activity, LoginResponse loginResponse){
         callbackManager = CallbackManager.Factory.create();
         this.activity = activity;
         this.loginResponse = loginResponse;
